@@ -1,0 +1,45 @@
+{{#paper-toolbar tall=true warn=false}}
+<div class="layout-row layout-align-center-start">
+    <h2>Fun Star Wars Movie Details!</h2>
+</div>
+<span class="flex"></span>
+    {{#paper-toolbar-tools}}
+        {{#if session.isAuthenticated}}
+            {{#paper-button raised=true warn=true fab=true onClick=(action "logout")}}
+                {{paper-icon "lock"}}
+            {{/paper-button}}
+        {{/if}}
+        {{#paper-button raised=true onClick=(action "gotoMovies")}}
+            Movies
+        {{/paper-button}}
+        {{#paper-button raised=true onClick=(action "gotoCharacters")}}
+            Characters
+        {{/paper-button}}
+        {{#paper-button raised=true onClick=(action "gotoVideo")}}
+            Trailer
+        {{/paper-button}}
+    {{/paper-toolbar-tools}}
+{{/paper-toolbar}}
+<div class="layout-column layout-align-center-center">
+    <div class="layout-row layout-align-center-center">
+        <div class="flex"></div>
+        <div class="flex 70">
+            <h5>
+                This is star wars movie detail
+            </h5>
+        </div>
+        <div class="flex"></div>
+    </div>
+    <div class="layout-row layout-align-center-center">
+        <div class="flex-100">
+            <h3>May the Force be with you</h3>
+        </div>
+    </div>
+</div>
+{{paper-divider}}
+<div class="layout-column layout-align-start-center">
+    <div>
+        {{outlet}}
+    </div>
+</div>
+

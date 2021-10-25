@@ -1,0 +1,24 @@
+{{#paper-card as |card|}}
+    {{#card.title as |title|}}
+        {{#title.text as |text|}}
+        {{#text.headline}} {{movie.title}} {{/text.headline}}
+        {{#text.subhead}}
+        Directeur: {{movie.director}} <br>
+        Date: {{movie.release_date}} <br>
+        {{#if showDetails}}
+            <br>
+            Producteur: {{movie.producer}}<br>
+            Episode: {{movie.episode_id}}<br>
+        {{/if}}
+        {{/text.subhead}}
+        {{/title.text}}
+        {{#title.media size="md"}}
+            <div class="card-media"></div>
+        {{/title.media}}
+    {{/card.title}}
+    {{#card.actions}}
+        {{#paper-button fab=true onClick=(action "showMovieDetails")}}
+            {{buttonTxt}}
+        {{/paper-button}}
+    {{/card.actions}}
+{{/paper-card}}

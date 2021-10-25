@@ -1,0 +1,36 @@
+<div>
+    {{#if session.isAuthenticated}}
+        Succes
+    {{else}}
+    <div class="layout-column flex">
+        <div class="flex"></div>
+        <div class="layout-rowl layout-align-center-center flex"></div>
+            <div class="flex"></div>
+            <div class="flex">
+                {{#paper-card as |card|}}
+                    {{#card.title as |title|}}
+                        {{#title.text as |text|}}
+                            {{#text.headline}}Log In with Google{{/text.headline}}
+                            {{#text.subhead}}
+                                You can use our existing Google account
+                            {{/text.subhead}}
+                        {{/title.text}}
+                        {{title.media size="lg" 
+                                       src="http://developers.google.com/identity/images/g-logo.png"
+                                       alt="Google Logo" title="Google"}}
+                    {{/card.title}}
+                    {{#card.actions}}
+                        {{#paper-button primary=true raised=true onClick=(action "authWithGoogle")}}
+                            Log In
+                        {{/paper-button}}
+                        {{#paper-button primary=true raised=true onClick=(action "goHome")}}
+                            I'll never join you!
+                        {{/paper-button}}
+                    {{/card.actions}}
+                {{/paper-card}}
+            </div>
+        <div class="flex"></div>
+        <div class="flex"></div>
+    </div>
+    {{/if}}
+</div>

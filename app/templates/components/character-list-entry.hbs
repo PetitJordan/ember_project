@@ -1,0 +1,26 @@
+{{#paper-card as |card|}}
+    {{#card.title as |title|}}
+        {{#title.text as |text|}}
+        {{#text.headline}} 
+            {{character.name}} 
+        {{/text.headline}}
+        {{#text.subhead}}
+            {{#if showDetails}}
+                Nom: {{character.name}} <br>
+                Taille: {{character.height}} <br>
+                Poids: {{character.mass}} <br>
+                Couleur des cheveux: {{character.hair_color}} <br>
+                Coulour de peau: {{character.skin_color}} <br>
+                Couleur des yeux: {{character.eye_color}} <br>
+                Birthday: {{character.birth_year}} <br>
+                Gender: {{character.gender}} <br>
+            {{/if}}
+        {{/text.subhead}}
+        {{/title.text}}
+    {{/card.title}}
+    {{#card.actions}}
+        {{#paper-button fab=true  primary=true onClick=(action "showCharacterDetails")}}
+            {{buttonTxt}}
+        {{/paper-button}}
+    {{/card.actions}}
+{{/paper-card}}

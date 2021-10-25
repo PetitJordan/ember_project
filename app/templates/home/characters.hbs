@@ -1,0 +1,9 @@
+<div class="layout-row layout-wrap">
+    {{#each model as |character|}}
+        <div class="flex-auto">
+            {{#character-list-entry character=character}}
+            {{/character-list-entry}}
+        </div>
+    {{/each}}
+</div>
+

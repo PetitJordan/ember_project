@@ -1,0 +1,12 @@
+
+{{#each model as |movie|}}
+    <div class="layout row layout-align-center-center">
+        <div class="flex-15"></div>
+        <div class="flex">
+            {{#movie-list-entry movie=movie}}
+            {{/movie-list-entry}}
+        </div>
+    <div class="flex-15"></div>
+    </div>
+{{/each}}
+
